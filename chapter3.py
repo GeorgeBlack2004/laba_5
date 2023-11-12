@@ -1,9 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('TkAgg')
 
 x = np.array([3.567, -5])
-a_values = np.arange(-5, 12, 2.5)
-y_values = np.sin(x/3) + 1.2*a_values
+a_values = (-5, -2.5, 0, 2.5, 5, 7.5, 10)
+y_values = np.sin(x/3) + 1.2*np.asarray(a_values)
 
 print("Аргументы (x):", x)
 print("Значения функции (f(x)):", y_values)

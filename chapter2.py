@@ -1,5 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib
+matplotlib.use('TkAgg')
 
 df = pd.read_csv('test.csv', sep=",")
 df = df.sample(n=1000, replace=False)
@@ -27,3 +30,14 @@ print("Сводная таблица:")
 print(pivot_table)
 
 df.to_csv('surname.csv', sep=",", index=False)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+ax.scatter(df['DistrictId'], df['Rooms'], df['Id'])
+ax.set_xlabel('DistrictId')
+ax.set_ylabel('Rooms')
+ax.set_zlabel('Id')
+ax.set_title('3D визуализация данных')
+
+plt.show()
