@@ -4,6 +4,7 @@ import matplotlib
 
 matplotlib.use('TkAgg')
 
+
 a_min = -5
 a_max = 12
 delta_a = 2.5
