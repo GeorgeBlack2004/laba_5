@@ -1,13 +1,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
+
 matplotlib.use('TkAgg')
 
-x = np.array([3.567, -5])
-a_values = (-5, -2.5, 0, 2.5, 5, 7.5, 10)
-y_values = np.sin(x/3) + 1.2*np.asarray(a_values)
+a_min = -5
+a_max = 12
+delta_a = 2.5
+x_value = 3.567
 
-print("Аргументы (x):", x)
+
+def f(x, a):
+    return np.sin(x / 3) + 1.2 * a
+
+
+a_values = np.arange(a_min, a_max + delta_a, delta_a)
+y_values = [f(x_value, a) for a in a_values]
+
+print("Аргументы (x):", x_value)
 print("Значения функции (f(x)):", y_values)
 
 max_value = np.max(y_values)

@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib
 matplotlib.use('TkAgg')
 
@@ -15,7 +14,7 @@ fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 df.boxplot(column='Rooms', by='DistrictId', ax=axes[0])
 axes[0].set_yscale('log')
 df['Rooms'].plot(kind='hist', ax=axes[1])
-axes[0].set_title('Ящики с усами')
+axes[0].set_title('Логарифмическая шкала')
 axes[1].set_title('Гистограмма')
 plt.show()
 
