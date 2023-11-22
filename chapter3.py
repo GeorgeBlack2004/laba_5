@@ -15,10 +15,10 @@ def f(x, a):
     return np.sin(x / 3) + 1.2 * a
 
 
-a_values = np.arange(a_min, a_max + delta_a, delta_a)
+a_values = np.arange(a_min, a_max, delta_a)
 y_values = [f(x_value, a) for a in a_values]
 
-print("Аргументы (x):", x_value)
+print("Аргументы (x):", a_values)
 print("Значения функции (f(x)):", y_values)
 
 max_value = np.max(y_values)
